@@ -1,0 +1,221 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    color: darkslategray;
+}
+.header-container{
+       height: 100vh;
+       width: 100vw;
+       background-color: rgb(105, 231, 149);
+       background-repeat: no-repeat ;
+       background-position: center;
+       background-size: contain;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: flex-start;
+       box-sizing: border-box;
+       padding: 0 112px;
+       position: relative;
+    }
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+h2{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.social-media{
+    margin-top: 1rem;
+    display: flex;
+}
+.social-media a{
+   text-decoration: none;
+   color: darkslategrey;  
+   padding: 1rem 4rem;
+   border: 1px solid #111; 
+   min-width: 4rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: .5s ease-in-out;
+}
+a:hover{
+    background-color: aliceblue;
+}
+
+/*MENU */
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkbox {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s;   
+}
+.checkbox .trace{
+    width: 50px;
+    height: 2px;
+    background-color: #111;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+.checkbox .trace:nth-child(1){
+    top: 26px;
+    transform: rotate(0);
+
+}
+.checkbox .trace:nth-child(2){
+    top: 46px;
+    transform: rotate(0);
+}    
+.checkbox .trace:nth-child(3){
+    top: 66px;
+    transform: rotate(0);
+}  
+#toggle{
+    display: none;
+}  
+
+/* MENU.2 */
+
+.menu {
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 9em;
+    margin-top: -2.5em;
+    z-index: -1;
+    font-size: 30px;
+
+}
+
+.menu-items {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    font-size: 50px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+    list-style-type: none;
+}
+
+.menu-items ul {
+    list-style-type: none;
+}
+.menu-items ul li a{
+    margin: 10px 0;
+    color: #111;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+ /*Animação*/
+ #toggle:checked + .checkbox  .trace:nth-child(1){
+    transform: rotate(45deg);
+    top: 47px;
+
+ } 
+ #toggle:checked + .checkbox  .trace:nth-child(2){
+    transform: translate(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+ }
+ #toggle:checked + .checkbox  .trace:nth-child(3){
+    transform: rotate(-45deg);
+    top: 48px;
+ }
+#toggle:checked + .checkbox {
+    background-color: #ffffff;
+}
+#toggle:checked ~ .menu{
+    box-shadow: 0px 0px 0px 100vmax #ffffff;
+    z-index: 1;
+}
+
+#toggle:checked ~ .menu-items { 
+    visibility: visible;
+    opacity: 1;
+}
+
+/* CARDS */
+
+.container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 3rem 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    margin: 3rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    filter: grayscale(0.5);
+    color: darkslategrey;
+    cursor: pointer;
+    transition: 0.5s ea;
+}
+.seta {
+    position: absolute;
+    padding: 1rem; /* Arrow size */
+            box-shadow: 2px 2px 0 2px #111;
+    -webkit-box-shadow: 2px -2px #111;
+    border: solid;
+    border-width: 0 0 6rem 6rem;
+    transition: 0.2s;
+    z-index: 1;
+  }
+  
+  .seta-direita { 
+    transform:rotate(134deg);
+    right: 50%;
+    top: 90%;
+    border: 6px;
+
+}
